@@ -22,7 +22,6 @@ import requests
 search_term_count = []
 search_term_dict = {'data analysis' : 0, 'analyst' : 0, 'relational database' : 0, 'esri' : 0, 'python' : 0, 'qgis' : 0}
 search_term = ['data analysis', 'analyst', 'relational database', 'esri', 'python', 'qgis']
-links = []
 
 #Variable to keep track of track when script is ran
 today_date = datetime.datetime.today()
@@ -32,16 +31,13 @@ view_page = []
 req = Request('https://www.linkedin.com/jobs/search/?geoId=103644278&keywords=GIS%20Analyst&location=United%20States')
 html_page = urlopen(req)
 
-soup = BeautifulSoup(html_page, "lxml")
-for link in soup.findAll('a'):
-    links.append(link.get('href'))
-
 #The html string in the html_page that contains the link to the job description
 string = 'https://www.linkedin.com/jobs/view/'
 
-for result in links:
-    if string in result:
-        view_page.append(result)
+soup = BeautifulSoup(html_page, "lxml")
+for link in soup.findAll('a'):
+    if string in link.get('href'):
+        view_page.append(link.get('href'))
 
 # Iterate through the top 25 job listings.
 # ***Update this to only scrape text from <section class="description">
