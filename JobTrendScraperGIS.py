@@ -16,6 +16,7 @@ import json
 import datetime
 import re
 import webbrowser
+#TO DO: add file_path from JSON configuration and replace in printToDocument function
 
 #Load configuration file and define variables
 with open(r'C:\Users\ivism\OneDrive\Desktop\Python\config.JSON', 'r') as f:
