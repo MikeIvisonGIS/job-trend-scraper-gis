@@ -12,15 +12,18 @@
 
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
+import json
 import datetime
-import time as this
 import re
 import webbrowser
-import requests
 
-#Variables to keep track of job trend keywords
+#Load configuration file and define variables
+with open(r'C:\Users\ivism\OneDrive\Desktop\Python\config.JSON', 'r') as f:
+    data = json.load(f)
+
+num_job_list = data.get('num_job_list', 0)
+search_term_dict = data.get('search_term', 0)
 search_term_count = []
-search_term_dict = {'data analysis' : 0, 'analyst' : 0, 'relational database' : 0, 'esri' : 0, 'python' : 0, 'qgis' : 0}
 search_term = ['data analysis', 'analyst', 'relational database', 'esri', 'python', 'qgis']
 
 #Variable to keep track of track when script is ran
@@ -41,7 +44,7 @@ for link in soup.findAll('a'):
 
 # Iterate through the top 25 job listings.
 # ***Update this to only scrape text from <section class="description">
-for x in view_page[:25]:
+for x in view_page[:num_job_list]:
     page_req = Request(str(x))
     new_html_page = urlopen(page_req)
     soup = BeautifulSoup(new_html_page, 'html.parser')

@@ -1,0 +1,8 @@
+### jobTrendScraperGIS.py-requirements.txt ###
+
+### Requirements without Version Specifiers
+beautifulsoup4
+
+#Directions:
+#Navigate to folder where requirements.txt is located
+#In command prompt, type pip install -r requirements.txt

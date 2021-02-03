@@ -1,0 +1,9 @@
+{
+	"geoID" : "Placeholder",
+	"country" : "United States",
+	"keyword" : "Placeholder",
+	"num_job_list" : 5,
+	"file_path" : "'C:/Users/ivism/OneDrive/Desktop/Python/keyword_counts.txt'",
+	"search_term" : {"data analysis" : 0, "analyst" : 0, "relational database" : 0, "esri" : 0, "python" : 0, "qgis" : 0}
+}
+	
