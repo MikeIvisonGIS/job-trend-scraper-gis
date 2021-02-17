@@ -1,2 +1,2 @@
-@py.exe C:\Users\ivism\OneDrive\Desktop\Python\JobTrendScraperGIS.py
+@py.exe C:\Python_Stuff\jobTrendScraperGIS\job-trend-scraper-gis\JobTrendScraperGIS.py
 @pause
